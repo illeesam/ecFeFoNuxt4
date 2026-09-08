@@ -1,0 +1,104 @@
+{
+    "workbench.browser.openLocalhostLinks": false,
+    "window.title": " :: ${rootName}${separator}${activeEditorShort}",
+    "prettier.printWidth": 255,
+    // Set the default
+    "editor.formatOnSave": true,
+    // Enable per-language
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[php]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[htm]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[xml]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+  "[ts]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+//   "workbench.colorCustomizations": {
+//       // 상단 타이틀바 배경색
+//       "titleBar.activeBackground": "#7c8f12",
+//       "titleBar.inactiveBackground": "#7c8f12",
+//       "window.activeBorder": "#06798d",
+//       // 윈도우 테두리 보더칼라
+//       "tab.activeBorder": "#12EAFF",
+//       "tab.activeModifiedBorder": "#ff0000",
+//       "tab.border": "#bb7b7b",
+//       "sideBar.background": "#232323",
+//       "editor.background": "#000000",
+//       "scrollbarSlider.background": "#A6A6A6",
+//       "minimap.background": "#313030",
+//       "sideBarSectionHeader.border": "#B7B7B7",
+//       "sideBarSectionHeader.background": "#474747",
+//       "editor.lineHighlightBorder": "#8C8C8C",
+//       "terminal.background": "#02022b",
+//       "titleBar.activeForeground": "#ffffff",
+//       "titleBar.inactiveForeground": "#ffffff",
+//       /////////////
+//       "list.activeSelectionBackground": "#1a1a1a",
+//       "list.activeSelectionForeground": "#aca912",
+//       "list.inactiveFocusBackground": "#1a1a1a",
+//       "list.inactiveSelectionBackground": "#595a00",
+//       "list.inactiveSelectionForeground": "#d0ff00",
+//     },
+    //eslint 代码自动检查相关配置
+    "eslint.enable": true,
+    "eslint.run": "onType",
+    "eslint.options": {
+        "extensions": [
+            ".js",
+            ".vue"
+        ]
+    },
+    "eslint.validate": [
+        "javascriptreact",
+        "vue",
+        "javascript",
+        "html",
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+}

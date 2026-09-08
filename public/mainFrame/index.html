@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="renderer" content="webkit" />
+    <title>시스템 홈</title>
+    <!-- 호환성 모드를 사용하여 IE 피하기 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery.contextMenu.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/style.min.css" rel="stylesheet" />
+    <link href="css/skins.css" rel="stylesheet" />
+    <link href="illeesam/css/illeesam_ui.css?v=4.7.3" rel="stylesheet" />
+  </head>
+  <body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden">
+    <div id="wrapper">
+      <!--왼쪽 탐색 시작-->
+      <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close">
+          <i class="fa fa-times-circle"></i>
+        </div>
+        <a href="index.html">
+          <li class="logo hidden-xs">
+            <span class="logo-lg">system</span>
+          </li>
+        </a>
+        <div class="sidebar-collapse">
+          <ul class="nav" id="side-menu">
+            <li>
+              <div class="user-panel">
+                <a class="menuItem noactive" title="개인정보" href="system/user/profile.html">
+                  <div class="hide" text="개인정보"></div>
+                  <div class="pull-left image">
+                    <img src="img/profile.jpg" onerror="this.src = img / profile.jpg" class="img-circle" alt="User Image" />
+                  </div>
+                </a>
+                <div class="pull-left info">
+                  <p>admin</p>
+                  <a href="#"><i class="fa fa-circle text-success"></i> 온라인</a>
+                  <a href="login.html" style="padding-left: 5px"><i class="fa fa-sign-out text-danger"></i> 로그아웃</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="menuItem" href="system/main.html"><i class="fa fa-home"></i> <span class="nav-label">home</span> </a>
+            </li>
+            <li>
+              <a href="#" data-refresh="false">
+                <i class="fa fa-gear"></i>
+                <span class="nav-label">시스템관리</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level collapse">
+                <li>
+                  <a class="menuItem" href="system/user.html" data-refresh="false">사용자관리xxx</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminSy/users" data-refresh="false">사용자관리</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminSy/codes" data-refresh="false">코드관리</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminSy/notices" data-refresh="false">공지사항관리</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminSy/menus" data-refresh="false">메뉴관리</a>
+                </li>
+                <li>
+                  <a href="#">로그관리<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li>
+                      <a class="menuItem" href="monitor/operlog.html" data-refresh="false">운영로그</a>
+                    </li>
+                    <li>
+                      <a class="menuItem" href="monitor/logininfor.html" data-refresh="false">로그인로그</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-refresh="false">
+                <i class="fa fa-video-camera"></i>
+                <span class="nav-label">공통업무관리</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level collapse">
+                <li>
+                  <a class="menuItem" href="/adminCo/login" data-refresh="false">관리자로그인</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminCo/sites" data-refresh="false">사이트관리</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-refresh="false">
+                <i class="fa fa-video-camera"></i>
+                <span class="nav-label">이커머스관리</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level collapse">
+                <li>
+                  <a class="menuItem" href="/adminEc" data-refresh="false">관리자 홈</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminEc/members" data-refresh="false">회원관리</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminEc/products" data-refresh="false">상품관리</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="/adminEc/orders" data-refresh="false">주문관리</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-refresh="false">
+                <i class="fa fa-bars"></i>
+                <span class="nav-label">시스템도구</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="nav nav-second-level collapse">
+                <li>
+                  <a class="menuItem" href="tool/build.html" data-refresh="false">폼빌드</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="tool/gen.html" data-refresh="false">소스생성</a>
+                </li>
+                <li>
+                  <a class="menuItem" href="swagger-ui/index.html" data-refresh="false">스웨거</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="menuBlank" href="http://ruoyi.vip/" data-refresh="false">
+                <i class="fa fa-location-arrow"></i>
+                <span class="nav-label">데모22공식 웹사이트</span>
+                <span></span>
+              </a>
+              <ul class="nav nav-second-level collapse"></ul>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">예시데모</span><span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li>
+                  <a>Form<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li><a class="menuItem" href="demo/form/button.html">버튼</a></li>
+                    <li><a class="menuItem" href="demo/form/grid.html">그리드</a></li>
+                    <li><a class="menuItem" href="demo/form/select.html">select</a></li>
+                    <li><a class="menuItem" href="demo/form/timeline.html">시간라인</a></li>
+                    <li><a class="menuItem" href="demo/form/basic.html">기본Form</a></li>
+                    <li><a class="menuItem" href="demo/form/cards.html">카드목록</a></li>
+                    <li><a class="menuItem" href="demo/form/jasny.html">함수확장</a></li>
+                    <li><a class="menuItem" href="demo/form/sortable.html">정렬종류</a></li>
+                    <li><a class="menuItem" href="demo/form/invoice.html">문서인쇄</a></li>
+                    <li><a class="menuItem" href="demo/form/labels_tips.html">tag & 메시지</a></li>
+                    <li><a class="menuItem" href="demo/form/tabs_panels.html">텝 & 패널</a></li>
+                    <li><a class="menuItem" href="demo/form/validate.html">Form확인</a></li>
+                    <li><a class="menuItem" href="demo/form/wizard.html">Form마법사</a></li>
+                    <li><a class="menuItem" href="demo/form/upload.html">파일업로드</a></li>
+                    <li><a class="menuItem" href="demo/form/datetime.html">일시</a></li>
+                    <li><a class="menuItem" href="demo/form/summernote.html">서식 있는 텍스트 편집기</a></li>
+                    <li><a class="menuItem" href="demo/form/duallistbox.html">왼쪽,오른쪽 리스트</a></li>
+                    <li><a class="menuItem" href="demo/form/autocomplete.html">자동완성</a></li>
+                    <li><a class="menuItem" href="demo/form/cxselect.html">다단 풀다운</a></li>
+                    <li><a class="menuItem" href="demo/form/localrefresh.html">Ajax로컬새로고침</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>테이블<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li><a class="menuItem" href="demo/table/search.html">테이블 조회</a></li>
+                    <li><a class="menuItem" href="demo/table/footer.html">테이블 푸터</a></li>
+                    <li><a class="menuItem" href="demo/table/groupHeader.html">테이블 헤더그룹</a></li>
+                    <li><a class="menuItem" href="demo/table/export.html">테이블 내려받기</a></li>
+                    <li><a class="menuItem" href="demo/table/exportSelected.html">테이블 선택 내려받기</a></li>
+                    <li><a class="menuItem" href="demo/table/remember.html">테이블 기억 </a></li>
+                    <li><a class="menuItem" href="demo/table/pageGo.html">페이지이동</a></li>
+                    <li><a class="menuItem" href="demo/table/params.html">테이블 조회 파라메터</a></li>
+                    <li><a class="menuItem" href="demo/table/multi.html">멀티</a></li>
+                    <li><a class="menuItem" href="demo/table/button.html">테이블 버튼</a></li>
+                    <li><a class="menuItem" href="demo/table/data.html">테이블 데이트</a></li>
+                    <li><a class="menuItem" href="demo/table/fixedColumns.html">테이블 고정열</a></li>
+                    <li><a class="menuItem" href="demo/table/event.html">테이블 이벤트</a></li>
+                    <li><a class="menuItem" href="demo/table/headerStyle.html">시트제목체재化</a></li>
+                    <li><a class="menuItem" href="demo/table/detail.html">테이블 상세</a></li>
+                    <li><a class="menuItem" href="demo/table/child.html">테이블 자식</a></li>
+                    <li><a class="menuItem" href="demo/table/image.html">테이블 이미지</a></li>
+                    <li><a class="menuItem" href="demo/table/curd.html">동적CRUD</a></li>
+                    <li><a class="menuItem" href="demo/table/reorderRows.html">테이블 drag 행이동</a></li>
+                    <li><a class="menuItem" href="demo/table/reorderColumns.html">테이블 drag 열이동</a></li>
+                    <li><a class="menuItem" href="demo/table/resizable.html">테이블 drag 열resize</a></li>
+                    <li><a class="menuItem" href="demo/table/editable.html">에디터블</a></li>
+                    <li><a class="menuItem" href="demo/table/subdata.html">테이블 sub데이타</a></li>
+                    <li><a class="menuItem" href="demo/table/refresh.html">시트자동새로고침</a></li>
+                    <li><a class="menuItem" href="demo/table/print.html">테이블 인쇄</a></li>
+                    <li><a class="menuItem" href="demo/table/dynamicColumns.html">테이블 동적열</a></li>
+                    <li><a class="menuItem" href="demo/table/customView.html">테이블 커스텀뷰</a></li>
+                    <li><a class="menuItem" href="demo/table/asynTree.html">비동기 로딩시트트리</a></li>
+                    <li><a class="menuItem" href="demo/table/other.html">테이블 다른기능</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>팝업<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li><a class="menuItem" href="demo/modal/dialog.html">모달 창</a></li>
+                    <li><a class="menuItem" href="demo/modal/layer.html">테이블구성요소</a></li>
+                    <li><a class="menuItem" href="demo/modal/table.html">테이블시트</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>운영<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li><a class="menuItem" href="demo/operate/table.html">테이블</a></li>
+                    <li><a class="menuItem" href="demo/operate/other.html">다른</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>보고서<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li><a class="menuItem" href="demo/report/echarts.html">바이두ECharts</a></li>
+                    <li><a class="menuItem" href="demo/report/peity.html">peity</a></li>
+                    <li><a class="menuItem" href="demo/report/sparkline.html">sparkline</a></li>
+                    <li><a class="menuItem" href="demo/report/metrics.html">차트 조합</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>icon<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li><a class="menuItem" href="demo/icon/fontawesome.html">Font Awesome</a></li>
+                    <li><a class="menuItem" href="demo/icon/glyphicons.html">Glyphicons</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-sitemap"></i>4층메뉴<span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level collapse">
+                    <li>
+                      <a href="#" id="damian">3레벨메뉴1<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+                        <li>
+                          <a href="#">4레벨메뉴1</a>
+                        </li>
+                        <li>
+                          <a href="#">4레벨메뉴2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="#">3레벨메뉴2</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!--왼쪽항해끝-->
+
+      <!--오른쪽부분시작-->
+      <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+          <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+              <a class="navbar-minimalize minimalize-styl-2" style="color: #fff" href="#" title="접기메뉴"> <i class="fa fa-bars"></i></a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right welcome-message">
+              <li>
+                <a data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="개발문서" href="http://doc.ruoyi.vip/ruoyi" target="_blank"><i class="fa fa-question-circle"></i> 문서</a>
+              </li>
+              <li>
+                <a data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="잠금화면" href="#" id="lockScreen"><i class="fa fa-lock"></i> 잠금화면</a>
+              </li>
+              <li>
+                <a data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="전체화면표시" href="#" id="fullScreen"><i class="fa fa-arrows-alt"></i> 전체화면</a>
+              </li>
+              <li class="dropdown user-menu">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown">
+                  <img src="img/profile.jpg" onerror="this.src = img / profile.jpg" class="user-image" />
+                  <span class="hidden-xs">데모22</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="mt5">
+                    <a href="system/user/profile.html" class="menuItem noactive"> <i class="fa fa-user"></i> 개인정보</a>
+                  </li>
+                  <li>
+                    <a onclick="resetPwd()"> <i class="fa fa-key"></i> 비밀번호 변경</a>
+                  </li>
+                  <li>
+                    <a onclick="switchSkin()"> <i class="fa fa-dashboard"></i> 테마 전환</a>
+                  </li>
+                  <li>
+                    <a onclick="toggleMenu()"> <i class="fa fa-toggle-off"></i> 수평메뉴</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="login.html"> <i class="fa fa-sign-out"></i> 로그아웃</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="row content-tabs">
+          <button class="roll-nav roll-left tabLeft">
+            <i class="fa fa-backward"></i>
+          </button>
+          <nav class="page-tabs menuTabs">
+            <div class="page-tabs-content">
+              <a href="javascript:;" class="active menuTab" data-id="/system/main">home index-2.html</a>
+            </div>
+          </nav>
+          <button class="roll-nav roll-right tabRight">
+            <i class="fa fa-forward"></i>
+          </button>
+          <a href="javascript:void(0);" class="roll-nav roll-right tabReload"><i class="fa fa-refresh"></i> 새로고침</a>
+        </div>
+
+        <a id="ax_close_max" class="ax_close_max" href="#" title="전체 화면 닫기"> <i class="fa fa-times-circle-o"></i> </a>
+
+        <div class="row mainContent" id="content-main">
+          <iframe class="illeesam_iframe" name="iframe0" width="100%" height="100%" data-id="/system/main" src="system/main.html" frameborder="0" seamless></iframe>
+        </div>
+
+        <div class="footer">
+          <div class="pull-right">© 2022 illeesam Copyright</div>
+        </div>
+      </div>
+      <!--오른쪽부분끝-->
+    </div>
+    <!-- 글로벌js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/jquery.contextMenu.min.js"></script>
+    <script src="ajax/libs/blockUI/jquery.blockUI.js"></script>
+    <script src="ajax/libs/layer/layer.min.js"></script>
+    <script src="illeesam/js/illeesam-ui.js?v=4.7.3"></script>
+    <script src="illeesam/js/illeesam_comn.js?v=4.7.3"></script>
+    <script src="illeesam/index.js?v=9991231"></script>
+    <script src="ajax/libs/fullscreen/jquery.fullscreen.js"></script>
+    <script>
+      window.history.forward(1);
+      var ctx = "#\/";
+      var lockscreen = null;
+      if (lockscreen) {
+        window.top.location = ctx + "lockscreen";
+      }
+      // 스킨 캐시
+      var skin = storage.get("skin");
+      // history(주소의 # 제거를 나타냄) 그렇지 않으면 주소가 "#" 형식으로 표시됩니다.
+      var mode = "history";
+      // 히스토리 액세스 경로 캐시
+      var historyPath = storage.get("historyPath");
+      // 탭이 메뉴와 연결되어 있는지 여부
+      var isLinkage = true;
+
+      // 현지제목우선순위,설정되지 않음取시스템설정
+      if ($.common.isNotEmpty(skin)) {
+        $("body").addClass(skin.split("|")[0]);
+        $("body").addClass(skin.split("|")[1]);
+      } else {
+        $("body").addClass("theme-dark");
+        $("body").addClass("skin-blue");
+      }
+
+      /* 사용자관리-비밀번호 재설정 */
+      function resetPwd() {
+        var url = ctx + "system/user/profile/resetPwd";
+        $.modal.open("%eb%b9%84%eb%b0%80%eb%b2%88%ed%98%b8%20%ec%9e%ac%ec%84%a4%ec%a0%95.html", url, "770", "380");
+      }
+
+      /* 테마 전환 */
+      function switchSkin() {
+        layer.open({
+          type: 2,
+          shadeClose: true,
+          title: "테마 전환",
+          area: ["530px", "386px"],
+          content: [ctx + "system/switchSkin", "no"],
+        });
+      }
+
+      /* 토글 메뉴 */
+      function toggleMenu() {
+        $.modal.confirm("가로 메뉴로 전환하시겠습니까?", function () {
+          $.get(ctx + "system/menuStyle/topnav", function (result) {
+            window.location.reload();
+          });
+        });
+      }
+
+      /** 새로고침경로 탭에 액세스할 때 */
+      function applyPath(url) {
+        $('a[href$="' + decodeURI(url) + '"]').click();
+        if (!$('a[href$="' + url + '"]').hasClass("noactive")) {
+          $('a[href$="' + url + '"]')
+            .parent("li")
+            .addClass("selected")
+            .parents("li")
+            .addClass("active")
+            .end()
+            .parents("ul")
+            .addClass("in");
+        }
+      }
+
+      $(function () {
+        var lockPath = storage.get("lockPath");
+        if ($.common.equals("history", mode) && window.performance.navigation.type == 1) {
+          var url = storage.get("publicPath");
+          if ($.common.isNotEmpty(url)) {
+            applyPath(url);
+          }
+        } else if ($.common.isNotEmpty(lockPath)) {
+          applyPath(lockPath);
+          storage.remove("lockPath");
+        } else {
+          var hash = location.hash;
+          if ($.common.isNotEmpty(hash)) {
+            var url = hash.substring(1, hash.length);
+            applyPath(url);
+          } else {
+            if ($.common.equals("history", mode)) {
+              storage.set("publicPath", "");
+            }
+          }
+        }
+
+        /* 초기비밀번호힌트 */
+        if (false) {
+          layer.confirm(
+            "귀하의 비밀번호는 여전히 초기 비밀번호입니다. 비밀번호를 변경하십시오!",
+            {
+              icon: 0,
+              title: "안전메시지",
+              btn: ["확인 ", "취소"],
+              offset: ["30%"],
+            },
+            function (index) {
+              resetPwd();
+              layer.close(index);
+            },
+          );
+        }
+
+        /* 만료비밀번호힌트 */
+        if (false) {
+          layer.confirm(
+            "비밀번호가 만료되었습니다. 최대한 빨리 변경하세요.!",
+            {
+              icon: 0,
+              title: "안전메시지",
+              btn: ["확인 ", "취소"],
+              offset: ["30%"],
+            },
+            function (index) {
+              resetPwd();
+              layer.close(index);
+            },
+          );
+        }
+        $("[data-toggle='tooltip']").tooltip();
+
+        /* iframe(관리자 상세 등)에서 탭 열기 요청 수신 */
+        window.addEventListener("message", function (e) {
+          if (e.data && e.data.type === "openTab" && e.data.url && e.data.title) {
+            var dataUrl = e.data.url;
+            var menuName = e.data.title;
+            var topWindow = $(window.document);
+            var panelUrl = "";
+            var currentTab = $(".menuTab.active", topWindow);
+            if (currentTab.length) panelUrl = currentTab.attr("data-panel") || "";
+            var dataIndex = Math.floor(Math.random() * 100) + 1;
+            var flag = true;
+            $(".menuTab", topWindow).each(function () {
+              if ($(this).data("id") === dataUrl) {
+                $(this).addClass("active").siblings(".menuTab").removeClass("active");
+                scrollToTab(this);
+                $(".page-tabs-content").animate({ marginLeft: "" }, "fast");
+                $(".mainContent .illeesam_iframe", topWindow).each(function () {
+                  if ($(this).data("id") === dataUrl) {
+                    $(this).show().siblings(".illeesam_iframe").hide();
+                    return false;
+                  }
+                });
+                flag = false;
+                return false;
+              }
+            });
+            if (flag) {
+              var str = '<a href="javascript:;" class="active menuTab noactive" data-id="' + dataUrl + '" data-panel="' + panelUrl + '">' + menuName + ' <i class="fa fa-times-circle"></i></a>';
+              $(".menuTab", topWindow).removeClass("active");
+              var str1 = '<iframe class="illeesam_iframe" name="iframe' + dataIndex + '" width="100%" height="100%" src="' + dataUrl + '" frameborder="0" data-id="' + dataUrl + '" data-panel="' + panelUrl + '" seamless></iframe>';
+              $(".mainContent", topWindow).find("iframe.illeesam_iframe").hide().parents(".mainContent").append(str1);
+              if (window.$.modal && window.$.modal.loading) window.$.modal.loading("데이터로딩중,기다리세요...");
+              $(".mainContent iframe:visible", topWindow).on("load", function () {
+                if (window.$.modal && window.$.modal.closeLoading) window.$.modal.closeLoading();
+              });
+              $(".menuTabs .page-tabs-content", topWindow).append(str);
+              scrollToTab($(".menuTab.active", topWindow));
+            }
+          }
+          /* 현재 탭 닫고 지정 URL 탭으로 전환, 이미 열려 있으면 새로고침 */
+          if (e.data && e.data.type === "closeTabAndGoTo" && e.data.url && e.data.title) {
+            var targetUrl = e.data.url;
+            var menuName = e.data.title;
+            var topWindow = $(window.document);
+            var currentId = $(".menuTab.active", topWindow).attr("data-id");
+            if (!currentId) return;
+            $(".menuTab[data-id='" + currentId + "']", topWindow).remove();
+            $(".mainContent .illeesam_iframe[data-id='" + currentId + "']", topWindow).remove();
+            var $existing = $(".menuTab[data-id='" + targetUrl + "']", topWindow);
+            if ($existing.length) {
+              $existing.addClass("active").siblings(".menuTab").removeClass("active");
+              scrollToTab($existing[0]);
+              $(".mainContent .illeesam_iframe", topWindow).each(function () {
+                if ($(this).data("id") === targetUrl) {
+                  $(this).attr("src", targetUrl).show().siblings(".illeesam_iframe").hide();
+                  return false;
+                }
+              });
+            } else {
+              var panelUrl = "";
+              var dataIndex = Math.floor(Math.random() * 100) + 1;
+              var str = '<a href="javascript:;" class="active menuTab noactive" data-id="' + targetUrl + '" data-panel="' + panelUrl + '">' + menuName + ' <i class="fa fa-times-circle"></i></a>';
+              $(".menuTab", topWindow).removeClass("active");
+              var str1 = '<iframe class="illeesam_iframe" name="iframe' + dataIndex + '" width="100%" height="100%" src="' + targetUrl + '" frameborder="0" data-id="' + targetUrl + '" data-panel="' + panelUrl + '" seamless></iframe>';
+              $(".mainContent", topWindow).find("iframe.illeesam_iframe").hide().parents(".mainContent").append(str1);
+              if (window.$.modal && window.$.modal.loading) window.$.modal.loading("데이터로딩중,기다리세요...");
+              $(".mainContent iframe:visible", topWindow).on("load", function () {
+                if (window.$.modal && window.$.modal.closeLoading) window.$.modal.closeLoading();
+              });
+              $(".menuTabs .page-tabs-content", topWindow).append(str);
+              scrollToTab($(".menuTab.active", topWindow));
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

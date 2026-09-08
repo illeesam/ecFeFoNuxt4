@@ -1,0 +1,185 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["db2603ec"]
+}
+
+// ─── 기존 (리뷰 작성용) ─────────────────────────────────────────────────────
+model Review {
+  @@schema("db2603ec")
+  id        Int      @id @default(autoincrement())
+  productId Int
+  name      String
+  email     String
+  title     String
+  content   String   @db.Text
+  rating    Float
+  createdAt DateTime @default(now())
+}
+
+// ─── _ddl_all.sql 테이블 (co_blog, pd_product 등 접두사_스네이크) ─────────
+model Blog {
+  @@schema("db2603ec")
+  @@map("co_blog")
+  blogId Int     @id @default(autoincrement()) @map("blog_id")
+  img    String  @db.VarChar(500)
+  title  String  @db.VarChar(255)
+  author String  @db.VarChar(100)
+  date   String  @map("date") @db.VarChar(50)
+  desc   String  @map("desc") @db.Text
+  blog   String  @db.VarChar(100)
+}
+
+model Brand {
+  @@schema("db2603ec")
+  @@map("co_brand")
+  brandId   Int    @id @default(autoincrement()) @map("brand_id")
+  brandCode String @unique @map("brand_code") @db.VarChar(50)
+  brandName String @map("brand_name") @db.VarChar(100)
+  products  Product[]
+}
+
+model Category {
+  @@schema("db2603ec")
+  @@map("co_category")
+  categoryId     Int     @id @default(autoincrement()) @map("category_id")
+  categoryCode   String  @unique @map("category_code") @db.VarChar(50)
+  categoryName   String  @map("category_name") @db.VarChar(100)
+  categoryLevel  Int     @default(1) @map("category_level")
+  parentCategory String? @map("parent_category") @db.VarChar(50)
+  products       Product[]
+}
+
+model CategoryIdToName {
+  @@schema("db2603ec")
+  @@map("co_category_id_to_name")
+  categoryCode String @id @map("category_code") @db.VarChar(50)
+  displayName  String @map("display_name") @db.VarChar(100)
+}
+
+model CategoryTree {
+  @@schema("db2603ec")
+  @@map("co_category_tree")
+  categoryTreeId String   @id @map("category_tree_id") @db.VarChar(50)
+  img           String?  @db.VarChar(500)
+  parentTitle   String   @map("parent_title") @db.VarChar(100)
+  value         String   @db.VarChar(50)
+  children      String[] @db.Text
+  smDesc        String?  @map("sm_desc") @db.VarChar(255)
+}
+
+model Code {
+  @@schema("db2603ec")
+  @@map("sy_code")
+  codeId Int    @id @default(autoincrement()) @map("code_id")
+  grpCode String @map("grp_code") @db.VarChar(20)
+  value   String @db.VarChar(50)
+  label   String @db.VarChar(100)
+}
+
+model Menu {
+  @@schema("db2603ec")
+  @@map("sy_menu_tree")
+  menuTreeId   Int     @id @default(autoincrement()) @map("menu_tree_id")
+  menuId       Int?    @map("menu_id")
+  link         String  @default("") @db.VarChar(255)
+  title        String  @db.VarChar(100)
+  hasDropdown   Boolean @default(false) @map("has_dropdown")
+  megamenu      Boolean? @default(false)
+  dropdownItems Json?   @map("dropdown_items")
+}
+
+model Option {
+  @@schema("db2603ec")
+  @@map("pd_option")
+  optionId    Int    @id @default(autoincrement()) @map("option_id")
+  optionCode  String @map("option_code") @db.VarChar(50)
+  optionName  String @map("option_name") @db.VarChar(100)
+  optionType  String @map("option_type") @db.VarChar(20)
+  optionLevel Int    @default(1) @map("option_level")
+}
+
+model Product {
+  @@schema("db2603ec")
+  @@map("pd_product")
+  productId      Int      @id @default(autoincrement()) @map("product_id")
+  img           String   @db.VarChar(500)
+  thumbImg      String?  @map("thumb_img") @db.VarChar(500)
+  bannerImg     String?  @map("banner_img") @db.VarChar(500)
+  bigImg        String?  @map("big_img") @db.VarChar(500)
+  title         String   @db.VarChar(255)
+  price         Int
+  oldPrice      Int?     @map("old_price")
+  rating        Float?   @default(0)
+  quantity      Int      @default(0)
+  smDesc        String?  @map("sm_desc") @db.Text
+  weight        Float?
+  dimension     String?  @db.VarChar(100)
+  categoryId    Int?     @map("category_id")
+  brandId       Int?     @map("brand_id")
+  trending      Boolean? @default(false)
+  banner        Boolean? @default(false)
+  saleOfPer     Int?     @map("sale_of_per")
+  isNew         Boolean? @default(false) @map("is_new")
+  bestSeller    Boolean? @default(false) @map("best_seller")
+  topRated      Boolean? @default(false) @map("top_rated")
+  relatedImages String[] @map("related_images") @db.Text
+  details       Json?
+  optionSizes   Json?    @map("option_sizes")
+  optionColors  Json?    @map("option_colors")
+  category      Category? @relation(fields: [categoryId], references: [categoryId], onDelete: SetNull)
+  brand         Brand?    @relation(fields: [brandId], references: [brandId], onDelete: SetNull)
+  reviews       ProductReview[]
+}
+
+model ProductReview {
+  @@schema("db2603ec")
+  @@map("pd_review")
+  productReviewId Int             @id @default(autoincrement()) @map("product_review_id")
+  productId       Int             @map("product_id")
+  parentReviewId  Int?            @map("parent_review_id")
+  img             String?         @db.VarChar(500)
+  name            String          @db.VarChar(100)
+  time            String          @db.VarChar(50)
+  rating          Float           @default(0)
+  content         String?         @db.Text
+  isChildren      Boolean?        @default(false) @map("is_children")
+  attachments     Json?           // URL[] (이미지·동영상 첨부)
+  product         Product         @relation(fields: [productId], references: [productId], onDelete: Cascade)
+  parent          ProductReview?  @relation("ReviewReplies", fields: [parentReviewId], references: [productReviewId], onDelete: Cascade)
+  replies         ProductReview[] @relation("ReviewReplies")
+}
+
+model Notice {
+  @@schema("db2603ec")
+  @@map("sy_notice")
+  noticeId     Int      @id @default(autoincrement()) @map("notice_id")
+  noticeTitle  String   @map("notice_title") @db.VarChar(200)
+  noticeType   String   @map("notice_type") @db.VarChar(10)
+  noticeContent String? @map("notice_content") @db.Text
+  status       String   @db.VarChar(10)
+  createBy     String?  @map("create_by") @db.VarChar(50)
+  createTime   DateTime? @map("create_time")
+  updateBy     String?  @map("update_by") @db.VarChar(50)
+  updateTime   DateTime? @map("update_time")
+  remark       String?  @db.VarChar(500)
+}
+
+model CoAttach {
+  @@schema("db2603ec")
+  @@map("co_attach")
+  attachId   Int      @id @default(autoincrement()) @map("attach_id")
+  refType    String   @map("ref_type") @db.VarChar(50)
+  refId      Int      @map("ref_id")
+  physicalNm String   @map("physical_nm") @db.VarChar(255)
+  fileNm     String?  @map("file_nm") @db.VarChar(500)
+  ext        String   @db.VarChar(20)
+  fileSize   Int?     @map("file_size")
+  mimeType   String?  @map("mime_type") @db.VarChar(100)
+  url        String   @db.VarChar(500)
+  sortOrder  Int      @default(0) @map("sort_order")
+  createdAt  DateTime @default(now()) @map("created_at")
+}

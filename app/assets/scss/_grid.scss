@@ -1,0 +1,148 @@
+/* Bootstrap 호환 그리드 (Tailwind 프로젝트용 - Bootstrap 제거 대체) */
+/* 12칸 그리드, flexbox 기반 */
+@use "sass:math";
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  &.g-0 {
+    margin-right: 0;
+    margin-left: 0;
+    > * {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  &.items-center {
+    align-items: center;
+  }
+}
+
+[class*="col-"] {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* 12분할 컬럼 (col-6 = 50%, col-4 = 33.33% 등) */
+$cols: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+@each $n in $cols {
+  .col-#{$n} {
+    flex: 0 0 math.percentage(math.div($n, 12));
+    max-width: math.percentage(math.div($n, 12));
+  }
+}
+
+/* sm (576px+) */
+@media (min-width: 576px) {
+  @each $n in $cols {
+    .col-sm-#{$n} {
+      flex: 0 0 math.percentage(math.div($n, 12));
+      max-width: math.percentage(math.div($n, 12));
+    }
+  }
+  .row-cols-sm-1 > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .row-cols-sm-2 > * {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .row-cols-sm-3 > * {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+  .row-cols-sm-5 > * {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* md (768px+) */
+@media (min-width: 768px) {
+  @each $n in $cols {
+    .col-md-#{$n} {
+      flex: 0 0 math.percentage(math.div($n, 12));
+      max-width: math.percentage(math.div($n, 12));
+    }
+    .offset-md-#{$n} {
+      margin-left: math.percentage(math.div($n, 12));
+    }
+  }
+  .offset-md-0 { margin-left: 0; }
+  .row-cols-md-3 > * {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+/* lg (992px+) */
+@media (min-width: 992px) {
+  @each $n in $cols {
+    .col-lg-#{$n} {
+      flex: 0 0 math.percentage(math.div($n, 12));
+      max-width: math.percentage(math.div($n, 12));
+    }
+    .offset-lg-#{$n} {
+      margin-left: math.percentage(math.div($n, 12));
+    }
+  }
+  .offset-lg-0 { margin-left: 0; }
+  .row-cols-lg-5 > * {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* xl (1200px+) */
+@media (min-width: 1200px) {
+  @each $n in $cols {
+    .col-xl-#{$n} {
+      flex: 0 0 math.percentage(math.div($n, 12));
+      max-width: math.percentage(math.div($n, 12));
+    }
+    .offset-xl-#{$n} {
+      margin-left: math.percentage(math.div($n, 12));
+    }
+  }
+  .offset-xl-0 { margin-left: 0; }
+}
+
+/* xxl (1400px+) */
+@media (min-width: 1400px) {
+  @each $n in $cols {
+    .col-xxl-#{$n} {
+      flex: 0 0 math.percentage(math.div($n, 12));
+      max-width: math.percentage(math.div($n, 12));
+    }
+  }
+}
+
+/* w-full 유틸 (Tailwind 호환) */
+.w-full {
+  width: 100% !important;
+}
+
+/* ms-auto, me-auto */
+.ms-auto {
+  margin-left: auto;
+}
+.me-auto {
+  margin-right: auto;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
